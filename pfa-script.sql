@@ -62,6 +62,46 @@ insert into conversations (id, title, content, parentid) values (11,'Alleged Abu
 #15, yes no 16 17
 insert into conversations (id, title, content, parentid) values (15,'More Information','<p>Do you need more information about the Family Division? <span class="navLink" onclick="makeAJAXRequest(\'paneContentConversationPane\', 1, 16)">Yes</span>&nbsp;&nbsp;<span class="navLink" onclick="makeAJAXRequest(\'paneContentConversationPane\', 1, 17)">No</span></p>',null);
 
+#16 help ids (5, 6, 7, 8, 9, 10, 11, 12)
+insert into conversations (id, title, content, parentid) values (16,'Family Division','<p>The Family Division is divided into three sections. The Adult Section handles <span class="informationHelpLink" onclick="makeAJAXRequest(\'paneContentHelpPane\', 2, 5)">divorce matters</span>, <span class="informationHelpLink" onclick="makeAJAXRequest(\'paneContentHelpPane\', 2, 6)">Protection From Abuse</span> (PFA) matters, and <span class="informationHelpLink" onclick="makeAJAXRequest(\'paneContentHelpPane\', 2, 7)">child support</span> and <span class="informationHelpLink" onclick="makeAJAXRequest(\'paneContentHelpPane\', 2, 8)">spousal support</span> matters. This can also include establishment of <span class="informationHelpLink" onclick="makeAJAXRequest(\'paneContentHelpPane\', 2, 9)">paternity</span> actions. The Children’s Court section handles <span class="informationHelpLink" onclick="makeAJAXRequest(\'paneContentHelpPane\', 2, 10)">custody</span> and <span class="informationHelpLink" onclick="makeAJAXRequest(\'paneContentHelpPane\', 2, 11)">dependency</span> matters. The Juvenile Probation section handles <span class="informationHelpLink" onclick="makeAJAXRequest(\'paneContentHelpPane\', 2, 12)">delinquency</span> matters.</p> <span class="navLink" onclick="makeAJAXRequest(\'paneContentConversationPane\', 1, 17)">Continue</span>',15);
+
+#17
+insert into conversations (id, title, content, parentid) values (17,'Dependency and Deliquency','<p>Please note that dependency and delinquency matters are NOT public record.  All other information collected here WILL NOT be available to the public until it is acted upon by the Court or is filed with the <span class="informationHelpLink" onclick="makeAJAXRequest(\'paneContentHelpPane\', 2, 13)">Department of Court Records</span> (DCR).</p> <span class="navLink" onclick="makeAJAXRequest(\'paneContentConversationPane\', 1, 18)">Continue</span>',null);
+
+#18
+insert into conversations (id, title, content, parentid) values (18,'Please Answer','<p>Please answer all of the following questions truthfully and to the best of your ability.</p> <span class="navLink" onclick="makeAJAXRequest(\'paneContentConversationPane\', 1, 19)">Continue</span>',17);
+
+#19
+insert into conversations (id, title, content, parentid) values (19,'Name','<p>I need to collect some information about you. Please tell me your name.</p> <span class="navLink" onclick="makeAJAXRequest(\'paneContentConversationPane\', 1, 20)">Continue</span>',17);
+
+#20, yes no 21, 19
+insert into conversations (id, title, content, parentid) values (20,'Confirm Name','<p>You stated that your name is %%User_Prefix%% %%User_FirstNm%% %%User_MiddleNm%% %%User_LastNm%%. Is this correct? <span class="navLink" onclick="makeAJAXRequest(\'paneContentConversationPane\', 1, 21)">Yes</span>&nbsp;&nbsp;<span class="navLink" onclick="makeAJAXRequest(\'paneContentConversationPane\', 1, 19)">No</span></p>',17);
+
+#21 (20a), yes no, 22, 23, idk -> help 14
+insert into conversations (id, title, content, parentid) values (21,'Existing Case Number','<p>Do you have an existing family division case number? <span class="navLink" onclick="makeAJAXRequest(\'paneContentConversationPane\', 1, 22)">Yes</span>&nbsp;&nbsp;<span class="navLink" onclick="makeAJAXRequest(\'paneContentConversationPane\', 1, 23)">No</span> <span class="informationHelpLink" onclick="makeAJAXRequest(\'paneContentHelpPane\', 2, 14)">I don\'t know</span></p>',17);
+
+#22 (20b)
+insert into conversations (id, title, content, parentid) values (22,'Enter Case Number','<p>Please tell me your family division case number.</p> <span class="navLink" onclick="makeAJAXRequest(\'paneContentConversationPane\', 1, 23)">Continue</span>',17);
+
+#23
+# %%User_Prefix%% %%User_LastNm%%, please choose the area in which you would like to file an action.
+
+#24
+#insert into conversations (id, title, content, parentid) values (,'','<p> </p>',);
+
+#25
+#insert into conversations (id, title, content, parentid) values (,'','<p> </p>',);
+
+#26
+#insert into conversations (id, title, content, parentid) values (,'','<p> </p>',);
+
+#27
+#insert into conversations (id, title, content, parentid) values (,'','<p> </p>',);
+
+#28
+#insert into conversations (id, title, content, parentid) values (,'','<p> </p>',);
+
+
 
 ####### Help Topics #######
 
@@ -76,3 +116,28 @@ insert into help (id, content, contenttype) values (3,'<p>A court active case is
 
 # For 11, yes
 insert into help (id, content, contenttype) values (4,'<p>Please contact the Office of Children, Youth, and Families at 412-350-5701 if you wish to report this matter.</p>',2);
+
+# For 16, divorce matters
+insert into help (id, content, contenttype) values (5,'<p>Matters which dissolve a marriage.</p>',0);
+# PFA, Needs resource page link
+insert into help (id, content, contenttype) values (6,'<p>Matters in which a party alleges abuse by an opposing party.  A PFA is an order that protects you and your children from your abuser.  It is a civil order that you file on your own behalf against a family or household member who is abusing you.  If you would like personal assistance with your situation or need information on safety issues, please click here.</p>',0);
+# child support
+insert into help (id, content, contenttype) values (7,'<p>Matters in which a parent, custodial party, or agency alleges he or she is entitled to money from the other parent for the care of their mutual child(ren).</p>',0);
+# spousal support
+insert into help (id, content, contenttype) values (8,'<p>Matters in which a party to a marriage alleges he or she cannot support him or herself without financial assistance from the other party.</p>',0);
+# paternity
+insert into help (id, content, contenttype) values (9,'<p>Matters in which a child has been alleged to be a victim of abuse or neglect or there is alleged improper care and control of a child.  The Office of Children Youth and Families (OCYF) are involved with these cases and are usually the moving party that brings the case to the attention of the Court.  A parent, guardian, or caregiver can also file a dependency petition when their child is out of their care and control.  If you wish to file a private dependency petition, you need to appear at the Juvenile Intake Department on the 2nd Floor of the Family Law Center (440 Ross Street, Pittsburgh, PA 15219) during court business hours.</p>',0);
+# custody
+insert into help (id, content, contenttype) values (10,'<p>Matters in which a party requests intervention from the court regarding where the child lives, who the child spends time with, and who makes the major decisions for the child.</p>',0);
+# dependency
+insert into help (id, content, contenttype) values (11,'<p>Matters in which a juvenile is alleged to have committed a crime and may be under the supervision of the Family Division judge assigned and the Juvenile Probation Office (JPO).</p>',0);
+# delinquency
+insert into help (id, content, contenttype) values (12,'<p>Matters in which the biological father of a child is established.</p>',0);
+
+# For 17, Department of Court Records
+insert into help (id, content, contenttype) values (13,'<p>The DCR is the official keeper of all original court documents. <a href="http://dcr.allegheny.us/">http://dcr.allegheny.us/</a></p>',0);
+
+# For 22 NEED TO REVISIT
+insert into help (id, content, contenttype) values (14,'<p>We need to explain the FD case number here and insert a screen shot; then send them back to 20a. again, but only give them the option to answer YES or NO</p>',0);
+
+
